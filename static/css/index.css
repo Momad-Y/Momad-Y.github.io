@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/Test1.gif');
+    background-image: url('img/Test1.gif');
     background-position: center;
     background-size: cover;
     overflow: hidden;
