@@ -1,0 +1,9 @@
+body {
+    background-image: url('../img/Test1.gif');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
