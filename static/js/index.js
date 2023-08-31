@@ -1,13 +1,15 @@
-var content = ["Gamed fsh5", "Gamed awy", "AI Engineer"];
+const content = ["Gamed fsh5", "Gamed awy", "AI Engineer"];
+const subtitleElement = document.querySelector("#subtitle");
+const overlayElement = document.querySelector("#overlay");
+
 var sentence = 0;
 var sentenceIndex = 0;
 var intervalVal;
-var element = document.querySelector("#subtitle");
+var currentMenu = "home";
 
 /**
  * Typing out a sentence one character at a time.
  *
- * @function type
  * @returns {void}
  */
 function type() {
@@ -18,7 +20,7 @@ function type() {
     var text = currentSentence.substring(0, sentenceIndex + 1);
 
     // Set the innerHTML of the element to the current substring, effectively typing out the sentence character by character
-    element.innerHTML = text;
+    subtitleElement.innerHTML = text;
 
     // Increment the sentenceIndex by 1
     sentenceIndex++;
@@ -42,7 +44,7 @@ function type() {
  */
 function Delete() {
     var text = content[sentence].substring(0, sentenceIndex - 1);
-    element.innerHTML = text;
+    subtitleElement.innerHTML = text;
     sentenceIndex--;
 
     if (text === "") {
@@ -52,7 +54,7 @@ function Delete() {
         else sentence++;
 
         sentenceIndex = 0;
-        element.innerHTML = "‎";
+        subtitleElement.innerHTML = "‎";
 
         setTimeout(function () {
             intervalVal = setInterval(type, 100);
@@ -63,10 +65,13 @@ function Delete() {
 // Start the typing effect on load
 intervalVal = setInterval(type, 100);
 
-function openOverlay() {
-    document.getElementById("overlay").style.width = "100%";
-}
-
-function closeOverlay() {
-    document.getElementById("overlay").style.width = "0%";
+function homeMenu() {
+    overlayElement.style.height = "100%";
+    if (currentMenu === "home") {
+        setTimeout(() => {
+            overlayElement.style.height = "0%";
+        }, 1000);
+        return;
+    } else {
+    }
 }
