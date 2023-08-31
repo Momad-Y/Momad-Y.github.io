@@ -108,7 +108,7 @@ body {
     height: 40px;
     border-radius: 100%;
     border: 2px solid var(--main-text-color);
-    background-color: var(--main-bg-color);
+    background-color: var(--third-bg-color);
     box-shadow: 4px 4px var(--main-text-color);
     color: var(--third-bg-color);
     font-size: 25px;
@@ -116,16 +116,21 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 50%;
-    /* display: none; */
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
 }
 
-.icon {
-    color: var(--third-bg-color);
+#home-icon {
+    color: var(--main-text-color);
 }
 
 #home-nav-bar-btn:active {
     box-shadow: 0px 0px var(--main-text-color);
     transform: translate(3px, 3px);
+}
+
+#home-nav-bar-btn:hover {
+    transform: translateY(-0.25em);
 }
 
 #overlay {
@@ -142,7 +147,7 @@ body {
     display: flex;
     justify-content: center;
     font-weight: 1000;
-    font-size: 12em;
+    font-size: 10em;
     color: var(--card-bg-color);
     mix-blend-mode: multiply;
     overflow: hidden;

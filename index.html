@@ -14,7 +14,6 @@
 
 <body>
     <div id="overlay">
-        About
     </div>
     <div id="home-main-card">
 
@@ -36,22 +35,23 @@
 
         <div id="home-nav-bar">
             <ul>
-                <div id="home-nav-bar-btn" onclick="homeMenuBtn()">
-                    <i class="fa fa-home icon"></i>
+                <div id="home-nav-bar-btn" onclick="navBtn('home')">
+                    <i id="home-icon" class="fa fa-home"></i>
                 </div>
-                <div id="home-nav-bar-btn">
-                    <i class="fa fa-user icon"></i>
+                <div id="home-nav-bar-btn" onclick="navBtn('about')">
+                    <i id="home-icon" class="fa fa-user"></i>
                 </div>
-                <div id="home-nav-bar-btn">
-                    <i class="fa fa-code icon"></i>
+                <div id="home-nav-bar-btn" onclick="navBtn('project')">
+                    <i id="home-icon" class="fa fa-code"></i>
                 </div>
-                <div id="home-nav-bar-btn">
-                    <i class="fa fa-envelope icon"></i>
+                <div id="home-nav-bar-btn" onclick="navBtn('contact')">
+                    <i id="home-icon" class="fa fa-comments"></i>
                 </div>
             </ul>
         </div>
 
     </div>
+
     <script type="text/javascript" src="static/js/index.js"></script>
 </body>
 
