@@ -1,11 +1,12 @@
 const content = ["Gamed fsh5", "Gamed awy", "AI Engineer"];
-const subtitleElement = document.querySelector("#subtitle");
+const subtitleElement = document.querySelector("#home-subtitle");
 const overlayElement = document.querySelector("#overlay");
+const bodyElements = document.body.getElementsByTagName("*");
 
-var sentence = 0;
-var sentenceIndex = 0;
-var intervalVal;
-var currentMenu = "home";
+var subtitle = 0;
+var subtitleIndex = 0;
+var typingInterval;
+var currentMenu = overlayElement.innerHTML;
 
 /**
  * Typing out a sentence one character at a time.
@@ -14,25 +15,25 @@ var currentMenu = "home";
  */
 function type() {
     // Get the current sentence from the content array using the sentence index
-    var currentSentence = content[sentence];
+    var currentSentence = content[subtitle];
 
     // Get the substring of the sentence from the beginning up to the current sentenceIndex position
-    var text = currentSentence.substring(0, sentenceIndex + 1);
+    var text = currentSentence.substring(0, subtitleIndex + 1);
 
     // Set the innerHTML of the element to the current substring, effectively typing out the sentence character by character
     subtitleElement.innerHTML = text;
 
     // Increment the sentenceIndex by 1
-    sentenceIndex++;
+    subtitleIndex++;
 
     // Check if the current substring is equal to the full sentence
     if (text === currentSentence) {
         // Clear the interval
-        clearInterval(intervalVal);
+        clearInterval(typingInterval);
 
         // Schedule the Delete function to start deleting the typed sentence after a delay of 1 second
         setTimeout(function () {
-            intervalVal = setInterval(Delete, 50);
+            typingInterval = setInterval(Delete, 50);
         }, 1000);
     }
 }
@@ -43,35 +44,75 @@ function type() {
  * @returns {void}
  */
 function Delete() {
-    var text = content[sentence].substring(0, sentenceIndex - 1);
+    // Get the current sentence from the `content` array using the `subtitle` index
+    var currentSentence = content[subtitle];
+
+    // Get the substring of the sentence from the beginning up to the current `subtitleIndex` position
+    var text = currentSentence.substring(0, subtitleIndex - 1);
+
+    // Set the `subtitleElement` innerHTML to the current substring, effectively deleting the sentence character by character
     subtitleElement.innerHTML = text;
-    sentenceIndex--;
 
+    // Decrement the `subtitleIndex` by 1
+    subtitleIndex--;
+
+    // Check if the current substring is empty
     if (text === "") {
-        clearInterval(intervalVal);
+        // Clear the interval
+        clearInterval(typingInterval);
 
-        if (sentence == content.length - 1) sentence = 0;
-        else sentence++;
+        // Check if the `subtitle` index is equal to the last index of the `content` array
+        if (subtitle == content.length - 1) {
+            // If it is, set the `subtitle` index to 0
+            subtitle = 0;
+        } else {
+            // Otherwise, increment the `subtitle` index by 1
+            subtitle++;
+        }
 
-        sentenceIndex = 0;
+        // Reset the `subtitleIndex` to 0
+        subtitleIndex = 0;
+
+        // Set the `subtitleElement` innerHTML to an empty string
         subtitleElement.innerHTML = "‎";
 
+        // After a delay of 200 milliseconds, start typing the next sentence by calling the `type` function
         setTimeout(function () {
-            intervalVal = setInterval(type, 100);
+            typingInterval = setInterval(type, 100);
         }, 200);
     }
 }
 
 // Start the typing effect on load
-intervalVal = setInterval(type, 100);
+typingInterval = setInterval(type, 100);
 
-function homeMenu() {
+function homeMenuBtn() {
+    currentMenu = "Home";
     overlayElement.style.height = "100%";
-    if (currentMenu === "home") {
-        setTimeout(() => {
-            overlayElement.style.height = "0%";
-        }, 1000);
-        return;
-    } else {
+    overlayElement.innerHTML = currentMenu + ".";
+
+    setTimeout(() => {
+        overlayElement.style.height = "0%";
+        hideElements();
+        showHome();
+    }, 1200);
+}
+
+function hideElements() {
+    for (var i = 0; i < bodyElements.length; i++) {
+        if (bodyElements[i].id === "overlay") continue;
+        else bodyElements[i].classList.add("hide");
+    }
+}
+
+function showHome() {
+    for (var i = 0; i < bodyElements.length; i++) {
+        if (
+            bodyElements[i].id.includes("about") ||
+            bodyElements[i].id.includes("projects") ||
+            bodyElements[i].id.includes("contact")
+        )
+            continue;
+        else bodyElements[i].style.visibility = "visible";
     }
 }
