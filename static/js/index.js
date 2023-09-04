@@ -1,3 +1,4 @@
+// Initializing variables and constants used for typing out sentences character by character.
 const content = ["Gamed fsh5", "Gamed awy", "AI Engineer"];
 const subtitleElement = document.querySelector("#home-subtitle");
 
@@ -82,6 +83,12 @@ function Delete() {
     }
 }
 
+/**
+ * Executes the typing effect when the window loads.
+ *
+ * @param None
+ * @returns None
+ */
 window.onload = function () {
     // Start the typing effect on load
     typingInterval = setInterval(type, 100);
