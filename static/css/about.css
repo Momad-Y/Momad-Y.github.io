@@ -1,0 +1,63 @@
+:root {
+    --main-text-color: #323232;
+    --sec-text-color: #666666;
+    --third-text-color: #454545;
+    --card-bg-color: #d3d3d3;
+    --third-bg-color: #e8e8e8;
+    --sec-bg-color: #ffffff;
+    --input-focus: #2d8cf0;
+    --main-bg-color: #006060;
+}
+
+#about-main-card {
+    background: var(--card-bg-color);
+    border: 2px solid var(--main-text-color);
+    box-shadow: 4px 4px var(--main-text-color);
+    border-radius: 5px;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-direction: column;
+    height: 1000px;
+    width: 90%;
+    min-height: min-content;
+    min-width: min-content;
+    max-height: 100%;
+    max-width: 90%;
+    padding: 2%;
+    margin: 8%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#about-title {
+    color: var(--main-text-color);
+    font-weight: 900;
+    font-size: 5em;
+    margin: 3% 0% 4%;
+    text-align: center;
+}
+
+#about-personal-info {
+    display: flex;
+    /* align-items: flex-start; */
+    /* justify-content: flex-start; */
+    flex-direction: column;
+}
+
+#about-personal-info-title {
+    color: #3b3b3b;
+    font-size: 1.5em;
+    margin: 2.5% 0;
+    text-align: center;
+}
+
+.about-personal-info-q {
+    color: var(--third-text-color);
+    font-size: 1em;
+    margin: 1% 0%;
+}
+
+.about-personal-info-a {
+    color: var(--sec-text-color);
+}

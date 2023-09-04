@@ -9,9 +9,11 @@
     padding: 0;
     font-family: SenticTextBlack;
     /* outline: red dashed 2px; */
+}
 
+:root {
     --main-text-color: #323232;
-    --sec-color-sub: #666666;
+    --sec-text-color: #666666;
     --card-bg-color: #d3d3d3;
     --third-bg-color: #e8e8e8;
     --sec-bg-color: #ffffff;
@@ -44,4 +46,18 @@ body {
     color: var(--card-bg-color);
     mix-blend-mode: multiply;
     overflow: hidden;
+}
+
+::-webkit-scrollbar-track {
+    border: 1px solid var(--main-text-color);
+    background-color: var(--card-bg-color);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--card-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-text-color);
 }
