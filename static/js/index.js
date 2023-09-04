@@ -1,12 +1,9 @@
 const content = ["Gamed fsh5", "Gamed awy", "AI Engineer"];
 const subtitleElement = document.querySelector("#home-subtitle");
-const overlayElement = document.querySelector("#overlay");
-const bodyElements = document.body.getElementsByTagName("*");
 
 var subtitle = 0;
 var subtitleIndex = 0;
 var typingInterval;
-var currentMenu = "Home";
 
 /**
  * Typing out a sentence one character at a time.
@@ -85,138 +82,7 @@ function Delete() {
     }
 }
 
-/**
- * Handles the navigation buttons on the website.
- *
- * @param {string} pressedMenu - The menu button that was pressed.
- * @returns {void}
- */
-function navBtn(pressedMenu) {
-    // Set the menu name based on the pressed menu button
-    let menuName;
-    switch (pressedMenu) {
-        case "home":
-            menuName = "Home.";
-            break;
-        case "about":
-            menuName = "About Me.";
-            break;
-        case "project":
-            menuName = "Projects.";
-            break;
-        case "contact":
-            menuName = "Contact Me.";
-            break;
-    }
-
-    // Update the current menu
-    currentMenu = pressedMenu;
-
-    // Show the overlay element with the menu name
-    overlayElement.style.height = "100%";
-    overlayElement.innerHTML = menuName;
-
-    // Setting the transition delay
-    setTimeout(() => {
-        // Hide all elements
-        overlayElement.style.height = "0%";
-        hideElements();
-        showMenu(pressedMenu);
-    }, 1300);
-}
-
-/**
- * Hides all elements on the webpage except for the overlay element.
- *
- * @param {None} None
- * @returns {None} None
- */
-function hideElements() {
-    // Loop through all the elements in the bodyElements array
-    for (var i = 0; i < bodyElements.length; i++) {
-        // Skip the overlay element
-        if (bodyElements[i].id === "overlay") {
-            continue;
-        }
-
-        // Hide the current element by adding the "hide" class
-        bodyElements[i].classList.add("hide");
-    }
-}
-
-/**
- * Shows the appropriate menu based on the pressed menu button.
- *
- * @param {string} pressedMenu - The menu button that was pressed.
- * @returns {None} None
- */
-function showMenu(pressedMenu) {
-    // Loop through all the elements in the bodyElements array
-    for (var i = 0; i < bodyElements.length; i++) {
-        var element = bodyElements[i];
-        var id = element.id;
-
-        // Check the value of pressedMenu using a switch statement
-        switch (pressedMenu) {
-            case "home":
-                // If the element's ID includes "about", "projects", or "contact", skip it
-                if (
-                    id.includes("about") ||
-                    id.includes("projects") ||
-                    id.includes("contact")
-                ) {
-                    continue;
-                }
-                // Remove the "hide" class from the element, making it visible
-                element.classList.remove("hide");
-                break;
-            case "about":
-                // If the element's ID includes "home", "projects", or "contact", skip it
-                if (
-                    id.includes("home") ||
-                    id.includes("projects") ||
-                    id.includes("contact")
-                ) {
-                    continue;
-                }
-                // Set the element's visibility to "visible"
-                element.style.visibility = "visible";
-                break;
-            case "projects":
-                // If the element's ID includes "about", "home", or "contact", skip it
-                if (
-                    id.includes("about") ||
-                    id.includes("home") ||
-                    id.includes("contact")
-                ) {
-                    continue;
-                }
-                // Set the element's visibility to "visible"
-                element.style.visibility = "visible";
-                break;
-            case "contact":
-                // If the element's ID includes "about", "projects", or "home", skip it
-                if (
-                    id.includes("about") ||
-                    id.includes("projects") ||
-                    id.includes("home")
-                ) {
-                    continue;
-                }
-                // Set the element's visibility to "visible"
-                element.style.visibility = "visible";
-                break;
-        }
-    }
-}
-
-/**
- * Executes when the window finishes loading.
- *
- */
 window.onload = function () {
-    // hideElements();
-
     // Start the typing effect on load
-    setInterval(type, 100);
+    typingInterval = setInterval(type, 100);
 };
