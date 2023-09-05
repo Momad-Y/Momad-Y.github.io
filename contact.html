@@ -1,0 +1,35 @@
+<div id="about-contact-info">
+    <button class="about-social-button">Github</button>
+    <button class="about-social-button">LinkedIn</button>
+    <button class="about-social-button"></button>
+    <button class="about-social-button"></button>
+    <button class="about-social-button"></button>
+
+</div>
+
+<style>
+    #about-contact-info {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 1%;
+    }
+
+    .about-social-button:active {
+        box-shadow: 0px 0px var(--main-text-color);
+        transform: translate(3px, 3px);
+    }
+
+    .about-social-button {
+        width: 120px;
+        height: 40px;
+        border-radius: 5px;
+        border: 2px solid var(--main-text-color);
+        background-color: var(--third-bg-color);
+        box-shadow: 4px 4px var(--main-text-color);
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--font-color);
+        cursor: pointer;
+        text-align: center;
+    }
+</style>
