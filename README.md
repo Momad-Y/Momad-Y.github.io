@@ -11,7 +11,6 @@ Welcome to my personal portfolio website! I am Mohamed Youssef Abdelnasser, an u
 -   **Responsive Design**: Ensuring compatibility across devices.
 -   **Cross-Browser Compatibility**: Testing for various browsers.
 -   **Version Control**: Git and GitHub for code management.
--   **Continuous Learning**: Ongoing project for skill development.
 -   **Documentation**: Project documentation for communication and understanding.
 
 ## Visit My Portfolio Website
