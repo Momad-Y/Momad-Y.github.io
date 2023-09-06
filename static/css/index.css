@@ -4,24 +4,24 @@ body {
 }
 
 :root {
-    --main-text-color: #323232; /* black  #c8c4bd*/
-    --card-border-color: #323232; /* black  #7c7365*/
-    --card-shadow-color: #323232; /* black  #26292a*/
-    --subtitle-text-color: #4c4c4c; /* black  #b8b2a9*/
-    --important-normal-text-color: #505050; /* black  #bcb7ae*/
-    --normal-text-color: #666666; /* black  #a8a095*/
-    --icons-color: #323232; /* black  #c8c4bd*/
-    --card-bg-color: #d3d3d3; /* black  #313537*/
-    --main-bg-color: #006060; /* black  #004d4d*/
-    --sec-bg-color: #ffffff; /* ! black  #c8c4bd*/
-    --third-bg-color: #e8e8e8; /* black  #25282a*/
-    --btn-bg-color: #2d8cf0; /* ! black  #c8c4bd*/
+    --main-text-color: #323232;
+    --card-border-color: #323232;
+    --card-shadow-color: #323232;
+    --subtitle-text-color: #4c4c4c;
+    --important-normal-text-color: #505050;
+    --normal-text-color: #666666;
+    --icons-color: #323232;
+    --card-bg-color: #d3d3d3;
+    --main-bg-color: #006060;
+    --sec-bg-color: #ffffff;
+    --third-bg-color: #e8e8e8;
+    --btn-bg-color: #2d8cf0;
 }
 
 #home-main-card {
     background: var(--card-bg-color);
-    border: 2px solid var(--main-text-color);
-    box-shadow: 4px 4px var(--main-text-color);
+    border: 2px solid var(--card-border-color);
+    box-shadow: 4px 4px var(--card-shadow-color);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -51,8 +51,8 @@ body {
     background-size: cover;
     height: 300px;
     width: 300px;
-    box-shadow: 4px 4px var(--main-text-color);
-    border: 2px solid var(--main-text-color);
+    box-shadow: 4px 4px var(--card-shadow-color);
+    border: 2px solid var(--card-border-color);
     border-radius: 50%;
 }
 
@@ -94,9 +94,9 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    border: 2px solid var(--main-text-color);
+    border: 2px solid var(--card-border-color);
     background-color: var(--third-bg-color);
-    box-shadow: 4px 4px var(--main-text-color);
+    box-shadow: 4px 4px var(--card-shadow-color);
     color: var(--third-bg-color);
     font-size: 25px;
     display: flex;
@@ -108,11 +108,11 @@ body {
 }
 
 .home-icons {
-    color: var(--main-text-color);
+    color: var(--icons-color);
 }
 
 .home-nav-bar-btn:active {
-    box-shadow: 0px 0px var(--main-text-color);
+    box-shadow: 0px 0px var(--card-shadow-color);
     transform: translate(3px, 3px);
 }
 

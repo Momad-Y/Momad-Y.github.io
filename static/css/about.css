@@ -1,18 +1,17 @@
 :root {
-    --main-text-color: #323232; /* black  #c8c4bd*/
-    --card-border-color: #323232; /* black  #7c7365*/
-    --card-shadow-color: #323232; /* black  #26292a*/
-    --subtitle-text-color: #4c4c4c; /* black  #b8b2a9*/
-    --important-normal-text-color: #505050; /* black  #bcb7ae*/
-    --normal-text-color: #666666; /* black  #a8a095*/
-    --icons-color: #323232; /* black  #c8c4bd*/
-    --card-bg-color: #d3d3d3; /* black  #313537*/
-    --main-bg-color: #006060; /* black  #004d4d*/
-    --sec-bg-color: #ffffff; /* ! black  #c8c4bd*/
-    --third-bg-color: #e8e8e8; /* black  #25282a*/
-    --btn-bg-color: #2d8cf0; /* ! black  #c8c4bd*/
+    --main-text-color: #323232;
+    --card-border-color: #323232;
+    --card-shadow-color: #323232;
+    --subtitle-text-color: #4c4c4c;
+    --important-normal-text-color: #505050;
+    --normal-text-color: #666666;
+    --icons-color: #323232;
+    --card-bg-color: #d3d3d3;
+    --main-bg-color: #006060;
+    --sec-bg-color: #ffffff;
+    --third-bg-color: #e8e8e8;
+    --btn-bg-color: #2d8cf0;
 }
-
 #about-main-card {
     background: var(--card-bg-color);
     border: 2px solid var(--main-text-color);
