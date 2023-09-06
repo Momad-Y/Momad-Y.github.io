@@ -161,3 +161,7 @@ body {
 #toggler-input:checked ~ #toggler-state:after {
     text-decoration: underline;
 }
+
+.icons {
+    color: var(--icons-color);
+}
