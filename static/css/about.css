@@ -1,12 +1,16 @@
 :root {
-    --main-text-color: #323232;
-    --sec-text-color: #666666;
-    --third-text-color: #454545;
-    --card-bg-color: #d3d3d3;
-    --third-bg-color: #e8e8e8;
-    --sec-bg-color: #ffffff;
-    --input-focus: #2d8cf0;
-    --main-bg-color: #006060;
+    --main-text-color: #323232; /* black  #c8c4bd*/
+    --card-border-color: #323232; /* black  #7c7365*/
+    --card-shadow-color: #323232; /* black  #26292a*/
+    --subtitle-text-color: #4c4c4c; /* black  #b8b2a9*/
+    --important-normal-text-color: #505050; /* black  #bcb7ae*/
+    --normal-text-color: #666666; /* black  #a8a095*/
+    --icons-color: #323232; /* black  #c8c4bd*/
+    --card-bg-color: #d3d3d3; /* black  #313537*/
+    --main-bg-color: #006060; /* black  #004d4d*/
+    --sec-bg-color: #ffffff; /* ! black  #c8c4bd*/
+    --third-bg-color: #e8e8e8; /* black  #25282a*/
+    --btn-bg-color: #2d8cf0; /* ! black  #c8c4bd*/
 }
 
 #about-main-card {
@@ -51,7 +55,7 @@
 #about-personal-info-title,
 #about-knowledge-title,
 #about-interests-title {
-    color: #4e4e4e;
+    color: var(--subtitle-text-color);
     font-size: 1.8em;
     margin: 15px 0px 25px;
 }
@@ -64,7 +68,7 @@
 .about-personal-info-q,
 .about-knowledge-item,
 .about-interests-item {
-    color: var(--third-text-color);
+    color: var(--important-normal-text-color);
     font-size: 1em;
     margin: 7px 0px;
 }
