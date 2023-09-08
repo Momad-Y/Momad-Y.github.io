@@ -21,8 +21,8 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    height: 1000px;
-    width: 65%;
+    height: 2000px;
+    width: 75%;
     min-height: min-content;
     min-width: min-content;
     max-height: 100%;
@@ -58,7 +58,7 @@
 #about-interests-title {
     color: var(--subtitle-text-color);
     font-size: 1.8em;
-    margin: 15px 0px 25px;
+    margin: 15px 0px 15px;
 }
 
 #about-knowledge-title,
@@ -71,7 +71,7 @@
 .about-interests-item {
     color: var(--important-normal-text-color);
     font-size: 1em;
-    margin: 7px 0px;
+    margin: 14px 0px 0px;
 }
 
 .about-personal-info-a {
@@ -87,9 +87,9 @@
     display: flex;
     flex: auto;
     position: absolute;
-    top: 1;
+    top: 32.5%;
     right: 0;
-    margin: 0% 6.5%;
+    margin: 0% 4%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -178,7 +178,7 @@
     color: var(--subtitle-text-color);
     font-size: 1.8em;
     text-align: center;
-    margin-bottom: 0.5%;
+    margin-bottom: 2%;
 }
 
 #about-programming-skills,
@@ -234,8 +234,8 @@
 
 hr {
     border: 0;
-    height: 1px;
-    margin: 6% 0%;
+    height: 0.04%;
+    margin: 6% 0px;
     background-image: -moz-linear-gradient(
         left,
         var(--card-bg-color),
