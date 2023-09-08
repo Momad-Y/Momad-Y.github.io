@@ -86,8 +86,8 @@ function Delete() {
 /**
  * Executes the typing effect when the window loads.
  *
- * @param None
- * @returns None
+ * @param {None} None
+ * @returns {void}
  */
 window.onload = function () {
     // Start the typing effect on load
