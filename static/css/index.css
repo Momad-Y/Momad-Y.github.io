@@ -121,6 +121,12 @@ body {
     transition: transform 0.1s ease;
 }
 
+#home-cv-logo {
+    color: var(--main-text-color);
+    font-size: 1.6em;
+    transition: transform 0.1s ease;
+}
+
 .home-social-icon:hover {
     transform: translateY(-0.1em);
 }
