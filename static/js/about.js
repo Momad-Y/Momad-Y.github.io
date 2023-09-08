@@ -1,6 +1,12 @@
-// Assigns the DOM element with the id "to-top-btn" to the variable `btn`.
-
-var btn = document.querySelector("#to-top-btn");
+// Initializes variables for the to-top button, progress bars, and progress bar values.
+const toTopBtn = document.querySelector("#to-top-btn");
+const progressBars = document.querySelectorAll(".progress-bar-progress");
+const progressBarsValues = [
+    { skill: "HTML", value: 95 },
+    { skill: "JS", value: 50 },
+    { skill: "Team Work", value: 90 },
+    { skill: "Time Management", value: 85 },
+];
 
 /**
  * Attaches an event listener to the "scroll" event on the window object.
@@ -11,7 +17,7 @@ var btn = document.querySelector("#to-top-btn");
  * @returns {void}
  */
 window.addEventListener("scroll", () => {
-    btn.classList.toggle("show", window.scrollY > 300);
+    toTopBtn.classList.toggle("show", window.scrollY > 300);
 });
 
 /**
@@ -32,7 +38,59 @@ function scrollToTop(event) {
 }
 
 /**
+ * Animates the progress bars on the page by gradually increasing their width based on the maximum percentage values provided.
+ *
+ * @param {None} None
+ * @returns {void}
+ */
+function loadBar() {
+    for (let i = 0; i < progressBars.length; i++) {
+        const bar = progressBars[i];
+        let percentage = 1;
+        const maxPercentage = progressBarsValues[i].value;
+        const loadSpeed = getRandomNumberByValue(maxPercentage);
+        const frameInterval = setInterval(loadFrame, loadSpeed);
+
+        /**
+         * Updates the width of the progress bar element.
+         * @returns {void}
+         */
+        function loadFrame() {
+            if (percentage >= maxPercentage) {
+                clearInterval(frameInterval);
+            } else {
+                percentage++;
+                bar.style.width = `${percentage}%`;
+            }
+        }
+    }
+}
+
+/**
+ * Generates a random number based on the input value.
+ *
+ * @param {number} value - The input value used to determine the range of the random number.
+ * @returns {number} - A random number within the specified range based on the input value.
+ */
+function getRandomNumberByValue(value) {
+    const min = value > 50 ? 5 : 10;
+    const max = value > 50 ? 10 : 20;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/**
+ * Event handler triggered when the window finishes loading.
+ * Calls the `loadBar` function to load progress bars.
+ *
+ * @param {None} None
+ * @returns {void}
+ */
+window.onload = function () {
+    loadBar();
+};
+
+/**
  * Adds an event listener to the 'btn' element.
  * When the 'btn' element is clicked, it calls the 'scrollToTop' function.
  */
-btn.addEventListener("click", scrollToTop);
+toTopBtn.addEventListener("click", scrollToTop);
