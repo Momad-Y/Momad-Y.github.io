@@ -130,3 +130,41 @@
     box-shadow: 0px 0px var(--card-shadow-color);
     transform: translate(3px, 3px);
 }
+
+#to-top-btn {
+    border-radius: 5px;
+    border: 2px solid var(--main-text-color);
+    background-color: var(--third-bg-color);
+    box-shadow: 4px 4px var(--main-text-color);
+    color: var(--font-color);
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#to-top-btn::after {
+    content: "\f0a6";
+    font-family: FontAwesome;
+    font-size: 2em;
+    line-height: 50px;
+    color: var(--main-text-color);
+}
+
+#to-top-btn:active {
+    box-shadow: 0px 0px var(--main-text-color);
+    transform: translate(3px, 3px);
+}
+
+#to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
