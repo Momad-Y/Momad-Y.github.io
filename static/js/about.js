@@ -1,6 +1,7 @@
 // Initializes variables for the to-top button, progress bars, and progress bar values.
 const toTopBtn = document.querySelector("#to-top-btn");
 const progressBars = document.querySelectorAll(".progress-bar-progress");
+
 const progressBarsValues = [
     { skill: "HTML", value: 95 },
     { skill: "JS", value: 50 },
@@ -9,32 +10,13 @@ const progressBarsValues = [
 ];
 
 /**
- * Attaches an event listener to the "scroll" event on the window object.
- * Toggles the "show" class on the `btn` element based on the scroll position.
- * If the scroll position is greater than 300, the "show" class is added, otherwise it is removed.
- *
- * @param {Event} event - The scroll event object.
- * @returns {void}
- */
-window.addEventListener("scroll", () => {
-    toTopBtn.classList.toggle("show", window.scrollY > 300);
-});
-
-/**
- * Adds an event listener to the `btn` element, which is a button with the id `to-top-btn`.
- * When the button is clicked, it prevents the default behavior of the event (in this case, preventing the page from scrolling to the top),
- * and instead smoothly scrolls the window to the top position.
- *
- * @param {Event} event - The event object that is passed to the event listener function.
+ * Scrolls the window to the top with a smooth animation.
+ * @param {Event} event - The event object that triggered the function.
  * @returns {void}
  */
 function scrollToTop(event) {
     event.preventDefault();
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 /**
@@ -43,7 +25,7 @@ function scrollToTop(event) {
  * @param {None} None
  * @returns {void}
  */
-function loadBar() {
+function loadBars() {
     for (let i = 0; i < progressBars.length; i++) {
         const bar = progressBars[i];
         let percentage = 1;
@@ -86,11 +68,7 @@ function getRandomNumberByValue(value) {
  * @returns {void}
  */
 window.onload = function () {
-    loadBar();
+    loadBars();
 };
 
-/**
- * Adds an event listener to the 'btn' element.
- * When the 'btn' element is clicked, it calls the 'scrollToTop' function.
- */
 toTopBtn.addEventListener("click", scrollToTop);
