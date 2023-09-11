@@ -1,12 +1,14 @@
 const toTopBtn = document.querySelector("#to-top-btn");
 const ageValue = document.querySelector("#about-age-value");
 const progressBars = document.querySelectorAll(".progress-bar-progress");
+const birthday = new Date("Oct 28, 2003");
 const progressBarsValues = [
     { skill: "HTML", value: 95 },
     { skill: "JS", value: 50 },
     { skill: "Team Work", value: 90 },
     { skill: "Time Management", value: 85 },
 ];
+var currentSlide = 1;
 
 /**
  * Animates the progress bars on the page by gradually increasing their width based on the maximum percentage values provided.
@@ -59,6 +61,7 @@ function getRandomNumberByValue(value) {
 window.onload = function () {
     calculateAge();
     loadBars();
+    showSlides(currentSlide);
 };
 
 /**
@@ -83,9 +86,6 @@ function calculateAge() {
     // Get the current date
     const currentDate = new Date();
 
-    // Define the birthday
-    const birthday = new Date("Oct 28, 2003");
-
     // Calculate the age in milliseconds
     const ageInMilliseconds = currentDate - birthday;
 
@@ -96,4 +96,60 @@ function calculateAge() {
 
     // Update the HTML element with the calculated age
     ageValue.innerHTML = `<span class='about-personal-info-a'>Age: </span>${ageInYears}`;
+}
+
+/**
+ * Moves to the next or previous slide in a slideshow.
+ * @param {number} n - The number of slides to move. Positive value moves to the next slide, negative value moves to the previous slide.
+ * @returns {void}
+ */
+function moveToSlide(n) {
+    // Update the value of currentSlide by adding n to it
+    currentSlide += n;
+
+    // Call the showSlides function with the updated value of currentSlide
+    showSlides(currentSlide);
+}
+
+/**
+ * Updates the current slide based on the button tag that is clicked.
+ *
+ * @param {HTMLElement} btnTag - The button tag that is clicked.
+ * @returns {void}
+ */
+function goToSlide(btnTag) {
+    const slideNumber = btnTag.innerHTML;
+    showSlides((currentSlide = slideNumber));
+}
+
+function showSlides(slideNumber) {
+    const imgSlides = document.querySelectorAll(".about-slides");
+    const slideBtns = document.querySelectorAll(".about-slideshow-navbar-btn");
+    const slideNumberShown = document.querySelectorAll(".about-slide-number");
+    const totalNumberOfSlides = imgSlides.length;
+
+    if (slideNumber > totalNumberOfSlides) {
+        currentSlide = 1;
+    }
+    if (slideNumber < 1) {
+        currentSlide = totalNumberOfSlides;
+    }
+    for (let i = 0; i < totalNumberOfSlides; i++) {
+        imgSlides[i].style.display = "none";
+
+        for (let i = 0; i < totalNumberOfSlides; i++) {
+            slideNumberShown[
+                i
+            ].innerHTML = `${currentSlide} / ${totalNumberOfSlides}`;
+        }
+        for (let i = 0; i < slideBtns.length; i++) {
+            slideBtns[i].className = slideBtns[i].className.replace(
+                "active",
+                ""
+            );
+        }
+        imgSlides[currentSlide - 1].style.display = "block";
+
+        slideBtns[currentSlide - 1].className += " active";
+    }
 }
