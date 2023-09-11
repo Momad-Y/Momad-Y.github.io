@@ -122,34 +122,57 @@ function goToSlide(btnTag) {
     showSlides((currentSlide = slideNumber));
 }
 
+/**
+ * Displays the correct slide based on the given slide number.
+ * Updates the slide number indicator and the active state of the slide buttons.
+ *
+ * @param {number} slideNumber - The number of the slide to be displayed.
+ * @returns {void}
+ */
 function showSlides(slideNumber) {
     const imgSlides = document.querySelectorAll(".about-slides");
     const slideBtns = document.querySelectorAll(".about-slideshow-navbar-btn");
     const slideNumberShown = document.querySelectorAll(".about-slide-number");
     const totalNumberOfSlides = imgSlides.length;
 
+    // Check if the given slide number is greater than the total number of slides
+    // If it is, set the currentSlide variable to 1
     if (slideNumber > totalNumberOfSlides) {
-        currentSlide = 1;
+        slideNumber = 1;
     }
+
+    // Check if the given slide number is less than 1
+    // If it is, set the currentSlide variable to the total number of slides
     if (slideNumber < 1) {
-        currentSlide = totalNumberOfSlides;
+        slideNumber = totalNumberOfSlides;
     }
+
+    // Loop through all the slide images and hide them by setting their display style to "none"
     for (let i = 0; i < totalNumberOfSlides; i++) {
         imgSlides[i].style.display = "none";
-
-        for (let i = 0; i < totalNumberOfSlides; i++) {
-            slideNumberShown[
-                i
-            ].innerHTML = `${currentSlide} / ${totalNumberOfSlides}`;
-        }
-        for (let i = 0; i < slideBtns.length; i++) {
-            slideBtns[i].className = slideBtns[i].className.replace(
-                "active",
-                ""
-            );
-        }
-        imgSlides[currentSlide - 1].style.display = "block";
-
-        slideBtns[currentSlide - 1].className += " active";
     }
+
+    // Loop through all the slide number indicators and update their HTML content
+    // to show the current slide number and the total number of slides
+    for (let i = 0; i < totalNumberOfSlides; i++) {
+        slideNumberShown[
+            i
+        ].innerHTML = `${slideNumber} / ${totalNumberOfSlides}`;
+    }
+
+    // Loop through all the slide buttons and remove the "active" class from their className
+    for (let i = 0; i < slideBtns.length; i++) {
+        slideBtns[i].className = slideBtns[i].className.replace(" active", "");
+    }
+
+    // Display the slide image corresponding to the current slide number
+    // by setting its display style to "block"
+    imgSlides[slideNumber - 1].style.display = "block";
+
+    // Add the "active" class to the slide button corresponding to the current slide number
+    // by appending it to the className
+    slideBtns[slideNumber - 1].className += " active";
+
+    // Updating the current slide number
+    currentSlide = slideNumber;
 }
