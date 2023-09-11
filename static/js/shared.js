@@ -21,6 +21,7 @@ const themes = [
         "--third-bg-color": "#25282a",
         "--btn-bg-color": "#0c5bae",
         "--overlay-text-color": "#ffffff",
+        "--glow-color": "#6caff5",
     },
     {
         "--main-text-color": "#323232",
@@ -36,6 +37,7 @@ const themes = [
         "--third-bg-color": "#e8e8e8",
         "--btn-bg-color": "#2d8cf0",
         "--overlay-text-color": "#d3d3d3",
+        "--glow-color": "#1f62a8",
     },
 ];
 
