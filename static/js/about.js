@@ -1,7 +1,6 @@
-// Initializes variables for the to-top button, progress bars, and progress bar values.
 const toTopBtn = document.querySelector("#to-top-btn");
+const ageValue = document.querySelector("#about-age-value");
 const progressBars = document.querySelectorAll(".progress-bar-progress");
-
 const progressBarsValues = [
     { skill: "HTML", value: 95 },
     { skill: "JS", value: 50 },
@@ -58,6 +57,7 @@ function getRandomNumberByValue(value) {
  * @returns {void}
  */
 window.onload = function () {
+    calculateAge();
     loadBars();
 };
 
@@ -71,3 +71,29 @@ toTopBtn.addEventListener("click", (event) => {
     event.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+/**
+ * Calculates the age in years based on the current date and a predefined birthday.
+ * Updates the HTML element with the calculated age.
+ *
+ * @param {None} None
+ * @returns {void} This function does not return anything.
+ */
+function calculateAge() {
+    // Get the current date
+    const currentDate = new Date();
+
+    // Define the birthday
+    const birthday = new Date("Oct 28, 2003");
+
+    // Calculate the age in milliseconds
+    const ageInMilliseconds = currentDate - birthday;
+
+    // Convert milliseconds to years
+    const ageInYears = Math.floor(
+        ageInMilliseconds / (1000 * 60 * 60 * 24 * 365)
+    );
+
+    // Update the HTML element with the calculated age
+    ageValue.innerHTML = `<span class='about-personal-info-a'>Age: </span>${ageInYears}`;
+}
