@@ -10,16 +10,6 @@ const progressBarsValues = [
 ];
 
 /**
- * Scrolls the window to the top with a smooth animation.
- * @param {Event} event - The event object that triggered the function.
- * @returns {void}
- */
-function scrollToTop(event) {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-/**
  * Animates the progress bars on the page by gradually increasing their width based on the maximum percentage values provided.
  *
  * @param {None} None
@@ -71,4 +61,13 @@ window.onload = function () {
     loadBars();
 };
 
-toTopBtn.addEventListener("click", scrollToTop);
+/**
+ * Scrolls the window to the top with a smooth animation.
+ *
+ * @param {Event} event - The event object that triggered the function.
+ * @returns {void}
+ */
+toTopBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});

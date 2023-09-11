@@ -12,6 +12,7 @@
     --third-bg-color: #e8e8e8;
     --btn-bg-color: #2d8cf0;
     --overlay-text-color: #d3d3d3;
+    --glow-color: #1f62a8;
 }
 
 #about-main-card {
@@ -75,7 +76,7 @@
 }
 
 .about-personal-info-a {
-    color: var(--sec-text-color);
+    color: var(--normal-text-color);
 }
 
 .about-knowledge-item,
@@ -148,22 +149,23 @@
     color: var(--important-normal-text-color);
     font-size: 1em;
     margin: 7px 0px;
-    text-align: justify;
-    text-align-last: justify;
+    overflow: visible;
+    width: 100%;
 }
 
-.about-programming-skills-item::before,
-.about-soft-skills-item::after {
-    content: ".";
-    display: inline-block;
-    width: 100%;
-    height: 0;
-    visibility: hidden;
+.about-programming-skills-item-name {
+    float: left;
+    width: 50%;
+}
+
+.about-programming-skills-item-percentage {
+    float: right;
+    width: 50%;
+    text-align: end;
 }
 
 .about-programming-skills-progress {
     text-align: right;
-
     display: inline-block;
 }
 
@@ -209,4 +211,82 @@ hr {
         var(--card-border-color),
         var(--card-bg-color)
     );
+}
+
+#about-div-3 {
+    display: grid;
+    grid-template-columns: 1fr 0.2fr 1fr;
+}
+
+#about-div-3-title {
+    color: var(--subtitle-text-color);
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+#about-experience,
+#about-education {
+    display: flex;
+    flex-direction: column;
+}
+
+#about-experience-title,
+#about-education-title {
+    color: var(--subtitle-text-color);
+    font-size: 1.8em;
+    margin: 15px 0px 0px;
+}
+
+#about-experience-education-timeline {
+    padding: 30px 5px;
+}
+
+#about-experience-education-timeline ul {
+    list-style-type: none;
+    border-left: 2px solid var(--card-border-color);
+    padding: 10px 5px;
+}
+
+#about-experience-education-timeline ul li {
+    padding: 20px 10px 20px 20px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#about-experience-education-timeline ul li span {
+    display: inline-block;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    text-align: center;
+    color: var(--normal-text-color);
+}
+
+#about-experience-education-timeline ul li .content h3 {
+    color: var(--main-text-color);
+    font-size: 1.1em;
+    margin: 4px 0px;
+}
+#about-experience-education-timeline ul li .content p {
+    color: var(--normal-text-color);
+    margin: 10px 0px 15px 0px;
+    font-size: 1em;
+}
+#about-experience-education-timeline ul li:before {
+    position: absolute;
+    content: "";
+    width: 11px;
+    height: 11px;
+    background-color: var(--btn-bg-color);
+    border-radius: 50%;
+    left: -11.5px;
+    top: 27px;
+    transition: 0.5s;
+}
+
+#about-experience-education-timeline ul li:hover:before {
+    background-color: var(--glow-color);
+    box-shadow: 0px 0px 10px 2px var(--glow-color);
 }
