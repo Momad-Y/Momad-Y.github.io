@@ -22,6 +22,7 @@ const themes = [
         "--btn-bg-color": "#0c5bae",
         "--overlay-text-color": "#ffffff",
         "--glow-color": "#6caff5",
+        "--footer-bg-color": "#313537d0",
     },
     {
         "--main-text-color": "#323232",
@@ -38,6 +39,7 @@ const themes = [
         "--btn-bg-color": "#2d8cf0",
         "--overlay-text-color": "#d3d3d3",
         "--glow-color": "#1f62a8",
+        "--footer-bg-color": "#d3d3d3d0",
     },
 ];
 
@@ -50,6 +52,7 @@ const themes = [
  * @returns {void}
  */
 function navBtn(pressedPage) {
+    console.log(pressedPage);
     // Retrieve the page title and page link based on the pressed page number
     const [pageTitle, pageLink] = pressedPageData(pressedPage);
 
@@ -92,6 +95,7 @@ function pressedPageData(pressedPage) {
             break;
         case 3:
             pageName = "Projects.";
+            redirectLink = "projects.html";
             break;
         case 4:
             pageName = "Contact Me.";

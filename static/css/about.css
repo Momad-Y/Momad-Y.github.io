@@ -13,6 +13,7 @@
     --btn-bg-color: #2d8cf0;
     --overlay-text-color: #d3d3d3;
     --glow-color: #1f62a8;
+    --footer-bg-color: #d3d3d3d0;
 }
 
 #about-main-card {
@@ -59,7 +60,7 @@
 #about-interests-title {
     color: var(--subtitle-text-color);
     font-size: 1.8em;
-    margin: 15px 0px 15px;
+    margin: 0px 0px 15px;
 }
 
 #about-knowledge-title,
@@ -184,8 +185,8 @@
 
 hr {
     border: 0;
-    height: 1px;
-    margin: 6% 0px;
+    height: 0.8px;
+    margin: 5% 0px;
     background-image: -moz-linear-gradient(
         left,
         var(--card-bg-color),
@@ -303,7 +304,7 @@ hr {
     color: var(--subtitle-text-color);
     font-size: 1.8em;
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 4%;
 }
 
 #about-certifications {
