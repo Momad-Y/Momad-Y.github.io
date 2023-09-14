@@ -72,7 +72,7 @@ body {
 #toggle-theme-container {
     position: absolute;
     top: 0;
-    margin: 4%;
+    margin: 2.5%;
     display: flex;
     flex-direction: column;
     justify-content: center;

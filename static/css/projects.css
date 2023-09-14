@@ -59,6 +59,11 @@
     transform: translate(3px, 3px);
 }
 
-#projects-nav-bar-list {
-    display: inline;
+#projects-title {
+    color: var(--card-bg-color);
+    -webkit-text-stroke: 2px var(--main-text-color);
+    font-weight: 900;
+    font-size: 5em;
+    margin: 7% 0%;
+    text-align: center;
 }
