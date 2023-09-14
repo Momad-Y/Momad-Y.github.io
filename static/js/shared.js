@@ -5,6 +5,8 @@
  */
 const overlayElement = document.querySelector("#overlay");
 const themeToggler = document.querySelector("#toggler-input");
+const toTopBtn = document.querySelector("#to-top-btn");
+
 const rootClass = document.documentElement.style;
 const themes = [
     {
@@ -130,4 +132,9 @@ themeToggler.addEventListener("change", (event) => {
 
     // Call the toggleTheme function with the requestedTheme as an argument
     toggleTheme(requestedTheme);
+});
+
+toTopBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });

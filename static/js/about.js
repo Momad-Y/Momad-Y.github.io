@@ -1,4 +1,3 @@
-const toTopBtn = document.querySelector("#to-top-btn");
 const ageValue = document.querySelector("#about-age-value");
 const progressBars = document.querySelectorAll(".progress-bar-progress");
 const birthday = new Date("Oct 28, 2003");
@@ -70,10 +69,6 @@ window.onload = function () {
  * @param {Event} event - The event object that triggered the function.
  * @returns {void}
  */
-toTopBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
 
 /**
  * Calculates the age in years based on the current date and a predefined birthday.
