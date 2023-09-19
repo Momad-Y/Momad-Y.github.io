@@ -28,7 +28,6 @@
     --glow-color: #6caff5;
     --footer-bg-color: #313537d0;
 }
-
 body {
     display: flex;
     justify-content: center;
@@ -101,7 +100,7 @@ body {
     box-sizing: border-box;
     border-radius: 5px;
     border: 2px solid var(--card-border-color);
-    box-shadow: 4px 4px var(--card-shadow-color);
+    box-shadow: 3px 3px var(--card-shadow-color);
     position: absolute;
     cursor: pointer;
     top: 0;

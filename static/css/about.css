@@ -91,6 +91,8 @@
     top: 50%;
     transform: translateY(-50%);
     right: 30px;
+    /* outline: red dashed 2px; */
+    overflow: visible;
 }
 
 .about-nav-bar-btn {
@@ -100,7 +102,8 @@
     border-radius: 100%;
     border: 2px solid var(--card-border-color);
     background-color: var(--third-bg-color);
-    box-shadow: 3px 3px var(--card-shadow-color);
+    filter: drop-shadow(3px 3px var(--card-shadow-color));
+
     color: var(--third-bg-color);
     font-size: 25px;
     display: flex;
@@ -114,8 +117,8 @@
 }
 
 .about-nav-bar-btn:active {
-    box-shadow: 0px 0px var(--card-shadow-color);
-    transform: translate(3px, 3px);
+    filter: drop-shadow(0px 0px var(--card-shadow-color));
+    transform: translate(2px, 2px);
 }
 
 #about-div-2 {
@@ -345,7 +348,7 @@ hr {
     border-radius: 5px;
     border: 2px solid var(--card-border-color);
     background-color: var(--third-bg-color);
-    box-shadow: 3px 3px var(--card-shadow-color);
+    filter: drop-shadow(3px 3px var(--card-shadow-color));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -357,8 +360,8 @@ hr {
 
 #about-slideshow-back:active,
 #about-slideshow-advance:active {
-    box-shadow: 0px 0px var(--card-shadow-color);
-    transform: translate(3px, 3px);
+    filter: drop-shadow(0px 0px var(--card-shadow-color));
+    transform: translate(2px, 2px);
 }
 
 #about-slideshow-navbar {
@@ -376,7 +379,7 @@ hr {
     border-radius: 5px;
     border: 2px solid var(--card-border-color);
     background-color: var(--third-bg-color);
-    box-shadow: 3px 3px var(--card-shadow-color);
+    filter: drop-shadow(3px 3px var(--card-shadow-color));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -391,6 +394,6 @@ hr {
 }
 
 .about-slideshow-navbar-btn:active {
-    box-shadow: 0px 0px var(--card-shadow-color);
-    transform: translate(3px, 3px);
+    filter: drop-shadow(0px 0px var(--card-shadow-color));
+    transform: translate(2px, 2px);
 }
