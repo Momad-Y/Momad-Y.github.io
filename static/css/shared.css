@@ -57,15 +57,18 @@ body {
 ::-webkit-scrollbar-track {
     border: 1px solid var(--card-border-color);
     background-color: var(--card-bg-color);
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
     background-color: var(--card-bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--main-text-color);
+    border-radius: 5px;
+    border: 0.5px solid var(--card-border-color);
 }
 
 #toggle-theme-container {
