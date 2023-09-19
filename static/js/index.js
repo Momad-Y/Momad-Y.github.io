@@ -74,7 +74,7 @@ function Delete() {
         subtitleIndex = 0;
 
         // Set the `subtitleElement` innerHTML to an empty string
-        subtitleElement.innerHTML = "‎";
+        subtitleElement.innerHTML = "";
 
         // After a delay of 200 milliseconds, start typing the next sentence by calling the `type` function
         setTimeout(function () {
