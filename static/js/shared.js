@@ -128,7 +128,7 @@ function toggleTheme(requestedTheme) {
  */
 themeToggler.addEventListener("change", (event) => {
     // Declare and initialize the requestedTheme variable based on the checked state of the themeToggler element
-    let requestedTheme = event.target.checked ? 0 : 1;
+    let requestedTheme = event.target.checked ? 1 : 0;
 
     // Call the toggleTheme function with the requestedTheme as an argument
     toggleTheme(requestedTheme);

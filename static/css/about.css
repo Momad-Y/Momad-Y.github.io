@@ -1,19 +1,19 @@
 :root {
-    --main-text-color: #323232;
-    --card-border-color: #323232;
-    --card-shadow-color: #323232;
-    --subtitle-text-color: #4c4c4c;
-    --important-normal-text-color: #505050;
-    --normal-text-color: #666666;
-    --icons-color: #323232;
-    --card-bg-color: #d3d3d3;
-    --main-bg-color: #006060;
-    --sec-bg-color: #ffffff;
-    --third-bg-color: #e8e8e8;
-    --btn-bg-color: #2d8cf0;
-    --overlay-text-color: #d3d3d3;
-    --glow-color: #1f62a8;
-    --footer-bg-color: #d3d3d3d0;
+    --main-text-color: #c8c4bd;
+    --card-border-color: #7c7365;
+    --card-shadow-color: #26292a;
+    --subtitle-text-color: #b8b2a9;
+    --important-normal-text-color: #bcb7ae;
+    --normal-text-color: #a8a095;
+    --icons-color: #c8c4bd;
+    --card-bg-color: #313537;
+    --main-bg-color: #004d4d;
+    --sec-bg-color: #181a1b;
+    --third-bg-color: #25282a;
+    --btn-bg-color: #0c5bae;
+    --overlay-text-color: #ffffff;
+    --glow-color: #6caff5;
+    --footer-bg-color: #313537d0;
 }
 
 #about-main-card {
@@ -37,7 +37,6 @@
 
 #about-title {
     color: var(--main-text-color);
-    font-weight: 900;
     font-size: 5em;
     margin: 3% 0%;
     text-align: center;
@@ -92,7 +91,6 @@
     top: 50%;
     transform: translateY(-50%);
     right: 30px;
-    background-color: var(--main-bg-color);
 }
 
 .about-nav-bar-btn {
