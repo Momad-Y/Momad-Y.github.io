@@ -54,7 +54,6 @@ const themes = [
  * @returns {void}
  */
 function navBtn(pressedPage) {
-    console.log(pressedPage);
     // Retrieve the page title and page link based on the pressed page number
     const [pageTitle, pageLink] = pressedPageData(pressedPage);
 
@@ -134,6 +133,13 @@ themeToggler.addEventListener("change", (event) => {
     toggleTheme(requestedTheme);
 });
 
+/**
+ * Adds an event listener to the `toTopBtn` element, which is triggered when the button is clicked.
+ * The listener prevents the default behavior of the click event, and then scrolls the window to the top with a smooth animation.
+ *
+ * @param {Event} event - The click event object.
+ * @returns {void}
+ */
 toTopBtn.addEventListener("click", (event) => {
     event.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
