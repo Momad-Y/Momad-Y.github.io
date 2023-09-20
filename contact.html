@@ -59,18 +59,22 @@
 
         <div>
             <form id="contact-form">
-                <input name="sender-email" type="email" placeholder="Email" class="contact-form-inputs" />
-                <input name="sender-name" type="text" placeholder="Name" class="contact-form-inputs" />
-                <input name="subject" type="text" placeholder="Topic" class="contact-form-inputs" />
-                <textarea name="message-content" placeholder="Message Content" class="contact-form-inputs"
+                <input name="sender-email" type="text" placeholder="Email (Required)" class="contact-form-inputs" />
+                <input name="sender-name" type="text" placeholder="Name (Optional)" class="contact-form-inputs" />
+                <input name="subject" type="text" placeholder="Topic (Required)" class="contact-form-inputs" />
+                <textarea name="message-content" placeholder="Message Content (Optional)" class="contact-form-inputs"
                     id="contact-form-textarea"></textarea>
-                <input type="submit" value="Send" id="contact-send-form-btn">
+                <input type="submit" value="Send" class="contact-form-btn">
+                <input type="button" value="Clear" class="contact-form-btn" onclick="emptyForm()">
+                <input type="text" value="" id="form-submit-status" />
+
+
             </form>
         </div>
     </div>
 
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type=" text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript" src="static/js/shared.js"></script>
     <script type="text/javascript" src="static/js/contact.js"></script>
 </body>
