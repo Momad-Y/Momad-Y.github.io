@@ -1,35 +1,67 @@
-<div id="about-contact-info">
-    <button class="about-social-button">Github</button>
-    <button class="about-social-button">LinkedIn</button>
-    <button class="about-social-button"></button>
-    <button class="about-social-button"></button>
-    <button class="about-social-button"></button>
+<!DOCTYPE html>
+<html lang="en">
 
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mohamed Y Abdelnasser</title>
+    <link rel="stylesheet" href="static/css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="static/img/Logo.png">
 
-<style>
-    #about-contact-info {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        padding: 1%;
-    }
+</head>
 
-    .about-social-button:active {
-        box-shadow: 0px 0px var(--main-text-color);
-        transform: translate(3px, 3px);
-    }
+<body>
 
-    .about-social-button {
-        width: 120px;
-        height: 40px;
-        border-radius: 5px;
-        border: 2px solid var(--main-text-color);
-        background-color: var(--third-bg-color);
-        box-shadow: 4px 4px var(--main-text-color);
-        font-size: 17px;
-        font-weight: 600;
-        color: var(--font-color);
-        cursor: pointer;
-        text-align: center;
-    }
-</style>
+    <div id="toggle-theme-container">
+        <label id="toggler-label">
+            <input id="toggler-input" type="checkbox">
+            <span id="toggler-slider"></span>
+            <span id="toggler-state"></span>
+        </label>
+    </div>
+
+
+    <div id="overlay">
+    </div>
+
+    <div id="projects-footer">
+        <div id="projects-nav-bar">
+
+            <div class="projects-nav-bar-btn" onclick="navBtn(1)">
+                <i class="fa fa-home icons"></i>
+            </div>
+            <div class="projects-nav-bar-btn" onclick="navBtn(2)">
+                <i class="fa fa-user icons"></i>
+            </div>
+            <div class="projects-nav-bar-btn" onclick="navBtn(3)">
+                <i class="fa fa-code icons"></i>
+            </div>
+            <div class="projects-nav-bar-btn" onclick="navBtn(4)">
+                <i class="fa fa-comments icons"></i>
+            </div>
+            <div class="projects-nav-bar-btn" id="to-top-btn">
+                <i class="fa fa-hand-o-up icons"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <form id="contact-form">
+        <input name="sender-name" type="text" placeholder="Your name..." class="form__input" />
+        <input name="subject" type="text" placeholder="Topic..." class="form__input" />
+        <input name="sender-email" type="email" placeholder="Email..." class="form__input" />
+
+        <textarea name="message-content" placeholder="Your Message..." class="form__input"></textarea>
+
+        <input type="submit" value="send" class="form__input form__input--button">
+    </form>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="static/js/shared.js"></script>
+    <script type="text/javascript" src="static/js/contact.js"></script>
+</body>
+
+</html>

@@ -6,6 +6,7 @@
 const overlayElement = document.querySelector("#overlay");
 const themeToggler = document.querySelector("#toggler-input");
 const toTopBtn = document.querySelector("#to-top-btn");
+const cvLogoImg = document.querySelector("#home-cv-logo-img");
 
 const rootClass = document.documentElement.style;
 const themes = [
@@ -100,6 +101,7 @@ function pressedPageData(pressedPage) {
             break;
         case 4:
             pageName = "Contact Me.";
+            redirectLink = "contact.html";
             break;
     }
 
@@ -115,6 +117,9 @@ function toggleTheme(requestedTheme) {
     Object.entries(themes[requestedTheme]).forEach(([property, value]) => {
         rootClass.setProperty(property, value);
     });
+    if (requestedTheme === 1) cvLogoImg.src = "static/img/CV-Logo-Light.png";
+    else if (requestedTheme === 0)
+        cvLogoImg.src = "static/img/CV-Logo-Dark.png";
 }
 
 /**
@@ -140,7 +145,9 @@ themeToggler.addEventListener("change", (event) => {
  * @param {Event} event - The click event object.
  * @returns {void}
  */
-toTopBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
+try {
+    toTopBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+} catch (e) {}
