@@ -45,7 +45,7 @@
 
 #about-div-1 {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 #about-personal-info,
@@ -61,10 +61,6 @@
     color: var(--subtitle-text-color);
     font-size: 1.8em;
     margin: 0px 0px 15px;
-}
-
-#about-knowledge-title,
-#about-interests-title {
     text-align: center;
 }
 
@@ -74,15 +70,11 @@
     color: var(--important-normal-text-color);
     font-size: 1em;
     margin: 14px 0px 0px;
+    text-align: center;
 }
 
 .about-personal-info-a {
     color: var(--normal-text-color);
-}
-
-.about-knowledge-item,
-.about-interests-item {
-    text-align: center;
 }
 
 #about-nav-bar {
@@ -396,4 +388,8 @@ hr {
 .about-slideshow-navbar-btn:active {
     filter: drop-shadow(0px 0px var(--card-shadow-color));
     transform: translate(2px, 2px);
+}
+
+#toggle-theme-container {
+    margin: 3.5% !important;
 }

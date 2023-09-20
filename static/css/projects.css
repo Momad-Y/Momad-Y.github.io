@@ -156,5 +156,6 @@ body {
     font-size: 0.85em;
     grid-column: span 3;
     padding: 0% 2% 3.5%;
+    line-height: 1.2;
     text-align: center;
 }
