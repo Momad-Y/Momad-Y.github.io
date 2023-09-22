@@ -394,3 +394,40 @@ hr {
 #toggle-theme-container {
     margin: 3.5% !important;
 }
+
+.about-nav-bar-btn-tooltip {
+    width: max-content;
+    padding: 0px 5px 3px;
+    height: 30px;
+    font-size: 0.6em;
+    background-color: var(--third-bg-color);
+    color: var(--main-text-color);
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--card-border-color);
+    position: absolute;
+    z-index: 1;
+    top: 7px;
+    right: 129%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.7s;
+}
+
+.about-nav-bar-btn-tooltip::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 8px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--card-border-color);
+}
+
+.about-nav-bar-btn:hover .about-nav-bar-btn-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
