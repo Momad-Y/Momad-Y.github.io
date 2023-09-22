@@ -139,7 +139,7 @@ body {
 }
 
 .contact-options-btn:hover {
-    filter: drop-shadow(3px 3px var(--card-shadow-color));
+    filter: drop-shadow(1px 1px var(--card-shadow-color));
     transform: translateY(-0.1em);
 }
 
