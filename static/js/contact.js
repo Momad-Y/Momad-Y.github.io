@@ -134,11 +134,23 @@ function inputsValidity(formInputs) {
     return formInputs[1].value === "" || formInputs[3].value === "";
 }
 
+/**
+ * Copies my phone number to the clipboard and updates the tooltip text when clicked.
+ *
+ * @param {void}
+ * @returns {void}
+ */
 function copyPhoneNumber() {
     navigator.clipboard.writeText(phoneNumber);
     copyPhoneToolTip.innerHTML = "Copied";
 }
 
+/**
+ * Updates the the tooltip text when hovered over.
+ *
+ * @param {void}
+ * @returns {void}
+ */
 function hoverPhoneNumber() {
     copyPhoneToolTip.innerHTML = "Click To Copy";
 }
