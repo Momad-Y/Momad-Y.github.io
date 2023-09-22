@@ -27,6 +27,7 @@ body {
     align-items: center;
     flex-direction: column;
     max-height: min-content;
+    overflow: hidden;
 }
 
 #contact-footer {
@@ -41,12 +42,13 @@ body {
     justify-content: center;
     align-items: center;
     border-top: 1px solid var(--card-border-color);
+    z-index: 1;
 }
 
 #contact-nav-bar {
     display: grid;
     grid-gap: 18px;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-items: center;
 }
 
@@ -59,7 +61,7 @@ body {
     background-color: var(--third-bg-color);
     filter: drop-shadow(3px 3px var(--card-shadow-color));
     color: var(--third-bg-color);
-    font-size: 25px;
+    font-size: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,12 +94,58 @@ body {
 }
 
 #contact-content-container {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    margin: 0% 3% 0% 0%;
+    height: 340px;
+}
+
+#contact-content-title {
+    color: var(--main-text-color);
+    font-size: 1.9em;
+    text-align: left;
+}
+
+#contact-content-desc {
+    color: var(--normal-text-color);
+    font-size: 1.05em;
+    margin: 40px 0 45px;
+    text-align: left;
+}
+
+#contact-content-options {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 28px;
     align-items: center;
+    justify-content: center;
+    margin-left: 4px;
+}
+
+.contact-options-btn {
+    cursor: pointer;
+    width: min-content;
+    height: min-content;
+    border-radius: 5px;
+    color: var(--third-bg-color);
+    font-size: 28px;
     display: flex;
     justify-content: center;
-    flex: auto;
-    margin: 0% 4%;
-    outline: red dashed 2px;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.contact-options-btn:hover {
+    filter: drop-shadow(3px 3px var(--card-shadow-color));
+    transform: translateY(-0.1em);
+}
+
+#chess-icon {
+    color: var(--icons-color);
+    font-size: 30px;
 }
 
 #contact-form {
@@ -125,12 +173,12 @@ body {
 .contact-form-inputs::placeholder {
     color: #323232;
     opacity: 0.7;
-    overflow: visible !important;
+    overflow: visible !important ;
 }
 
 .contact-form-inputs:focus {
     border: 2px solid var(--btn-bg-color);
-    overflow: visible !important;
+    overflow: visible !important ;
 }
 
 .contact-form-btn {
@@ -143,7 +191,7 @@ body {
     font-size: 1em;
     color: #323232;
     cursor: pointer;
-    overflow: visible;
+    overflow: visible !important;
 }
 
 .contact-form-btn:active {
@@ -169,5 +217,43 @@ body {
     color: var(--important-normal-text-color);
     font-size: 1em;
     pointer-events: none;
-    overflow: visible;
+    overflow: visible !important;
+}
+
+#contact-phone-tooltip {
+    width: 60px;
+    height: 30px;
+    font-size: 0.4em;
+    background-color: var(--input-bg-color);
+    color: #323232;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -29px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.3s;
+}
+
+#contact-phone-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--input-bg-color) transparent;
+}
+
+.contact-phone-icon:hover #contact-phone-tooltip {
+    visibility: visible;
+    opacity: 1;
 }

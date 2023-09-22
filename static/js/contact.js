@@ -6,8 +6,10 @@ const emailjsData = {
 
 const form = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-submit-status");
+const copyPhoneToolTip = document.querySelector("#contact-phone-tooltip");
 const formInputs = form.children;
 const validEmailLength = 6;
+const phoneNumber = "00201067810849";
 
 /**
  * Initializes the emailjs library, verifies form validity, updates submit button status, and resets the form when the window loads.
@@ -130,4 +132,13 @@ function emailValidity(email) {
  */
 function inputsValidity(formInputs) {
     return formInputs[1].value === "" || formInputs[3].value === "";
+}
+
+function copyPhoneNumber() {
+    navigator.clipboard.writeText(phoneNumber);
+    copyPhoneToolTip.innerHTML = "Copied";
+}
+
+function hoverPhoneNumber() {
+    copyPhoneToolTip.innerHTML = "Click To Copy";
 }
